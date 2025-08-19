@@ -1,5 +1,5 @@
 // router/index.ts
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHashHistory } from 'vue-router'
 import IndexView from '@/view/Index.vue'
 import TrainerView from '@/view/DarttrainerView.vue'
 import ScoringTrainerView from '@/view/ScoringTrainerView.vue'
@@ -38,6 +38,6 @@ const routes = [
 ]
 
 export const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHashHistory(),
   routes
 })
