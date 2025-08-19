@@ -24,9 +24,9 @@
 
 <script setup>
 import { ref, watch, onMounted } from "vue";
-import DartBoardDoppel from "../components/DartBoardDoppel.vue";
-import ControlPanel from "../components/ControlPanel.vue";
-import BackButton from "../components/BackButton.vue";
+import DartBoardDoppel from "../components/DartboardDoppel.vue";
+import ControlPanel from "../components/Controlpanel.vue";
+import BackButton from "../components/Backbutton.vue";
 
 const boardSize = ref(500);
 const bullSize = ref(50);
