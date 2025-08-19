@@ -1,12 +1,12 @@
 <template>
   <div class="controls" v-show="!hideControls">
     <label>BoardSize:</label>
-    <input type="range" v-model="localBoardSize" min="0" max="800" />
+    <input type="range" v-model.number="localBoardSize" min="0" max="800" />
     <input type="number" v-model.number="localBoardSize" min="0" max="800" />
     <br />
 
     <label>BullSize:</label>
-    <input type="range" v-model="localBullSize" min="0" max="300" />
+    <input type="range" v-model.number="localBullSize" min="0" max="300" />
     <input type="number" v-model.number="localBullSize" min="0" max="300" />
     <br />
 
@@ -28,7 +28,12 @@ const props = defineProps({
   hideControls: Boolean
 });
 
-const emit = defineEmits(["update:boardSize", "update:bullSize", "update:rotateNumber", "random"]);
+const emit = defineEmits([
+  "update:boardSize",
+  "update:bullSize",
+  "update:rotateNumber",
+  "random"
+]);
 
 const localBoardSize = ref(props.boardSize);
 const localBullSize = ref(props.bullSize);
@@ -37,6 +42,10 @@ const localRotateNumber = ref(props.rotateNumber);
 watch(localBoardSize, (val) => emit("update:boardSize", val));
 watch(localBullSize, (val) => emit("update:bullSize", val));
 watch(localRotateNumber, (val) => emit("update:rotateNumber", val));
+
+watch(() => props.boardSize, (val) => (localBoardSize.value = val));
+watch(() => props.bullSize, (val) => (localBullSize.value = val));
+watch(() => props.rotateNumber, (val) => (localRotateNumber.value = val));
 </script>
 
 <style scoped>

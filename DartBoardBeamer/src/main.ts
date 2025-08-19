@@ -1,18 +1,6 @@
-import { createApp } from "vue";
-import App from "./App.vue";
-import { createRouter, createWebHistory } from "vue-router";
+// main.ts
+import { createApp } from 'vue'
+import App from './App.vue'
+import { router } from './router/index.ts'
 
-import Index from "./view/Index.vue";
-import DartTrainer from "./view/DarttrainerView.vue";
-
-const routes = [
-  { path: "/", component: Index },
-  { path: "/trainer", component: DartTrainer }
-];
-
-const router = createRouter({
-  history: createWebHistory(),
-  routes
-});
-
-createApp(App).use(router).mount("#app");
+createApp(App).use(router).mount('#app')

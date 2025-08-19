@@ -2,16 +2,13 @@
   <div class="trainer">
     <BackButton />
 
-    <!-- Hide Controls Toggle -->
     <label class="hide-controls">
       <input type="checkbox" v-model="hideControls" />
       Hide Controls
     </label>
 
-    <!-- Board -->
     <DartBoard :boardSize="boardSize" :bullSize="bullSize" :rotation="rotation" />
 
-    <!-- Controls -->
     <ControlPanel
       :boardSize="boardSize"
       :bullSize="bullSize"
@@ -35,7 +32,7 @@ const boardSize = ref(500);
 const bullSize = ref(50);
 const rotateNumber = ref(0);
 const hideControls = ref(false);
-const rotation = ref("rotate(0deg)");
+const rotation = ref("rotate(-9deg)");
 
 watch(rotateNumber, (val) => {
   if (val === 0) {

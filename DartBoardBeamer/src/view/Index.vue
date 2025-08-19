@@ -1,7 +1,10 @@
 <template>
   <div class="index">
     <h1>Dart Beamer Trainer</h1>
-    <router-link to="/trainer" class="btn">Start Training</router-link>
+    <router-link to="/trainer" class="btn">Segmente Training (alle)</router-link>
+    <router-link to="/scoring" class="btn">Scoring Training (20,19 und 18)</router-link>
+    <router-link to="/doppel" class="btn">Doppel Training (alle)</router-link>
+    <router-link to="/wichtigeDoppel" class="btn">Wichtige Doppel</router-link>
   </div>
 </template>
 

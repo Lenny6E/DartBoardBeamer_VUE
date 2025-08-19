@@ -1,6 +1,7 @@
 <template>
   <div class="container" :style="{ width: boardSize + 'px', height: boardSize + 'px' }">
     <div class="board" :style="{ transform: rotation }">
+      <div class="board2"></div>
       <div
         class="bull"
         :style="{
@@ -14,7 +15,6 @@
     </div>
   </div>
 </template>
-
 <script setup>
 defineProps({
   boardSize: { type: Number, required: true },
@@ -22,7 +22,6 @@ defineProps({
   rotation: { type: String, required: true }
 });
 </script>
-
 <style scoped>
 .container {
   display: flex;
@@ -51,5 +50,18 @@ defineProps({
   position: absolute;
   background-color: red;
   border-radius: 50%;
+  z-index: 2;
 }
+.board2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  height: 90%;
+  border-radius: 50%;
+  background-color: black;
+  z-index: 1;
+}
+
 </style>

@@ -1,8 +1,16 @@
 <script setup lang="ts">
+import { ref } from 'vue'
 import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
 </script>
 
 <template>
-  <router-view />
+  <div>
+    <router-view/>
+  </div>
 </template>
+
+<style>
+body{
+  background-color: black;
+}
+</style>
